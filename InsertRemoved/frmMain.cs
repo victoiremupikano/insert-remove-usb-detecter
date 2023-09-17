@@ -29,12 +29,12 @@ namespace InsertRemoved
                             int devType = Marshal.ReadInt32(m.LParam, 4);
                             if (devType == DBT_DEVTYP_VOLUME)
                             {
-                                lstDevices.Items.Add("USB Volume added");
+                                lstDevices.Items.Add("USB Volume ajouter");
                                 DevBroadcastVolume vol;
                                 vol = (DevBroadcastVolume)
                                     Marshal.PtrToStructure(m.LParam, typeof(DevBroadcastVolume));
-                                lstDevices.Items.Add("Mask is " + vol.Mask);
-                                lstDevices.Items.Add("Letter is " + GetLetter(vol.Mask));
+                                lstDevices.Items.Add("Maqrue est " + vol.Mask);
+                                lstDevices.Items.Add("Lettre est " + GetLetter(vol.Mask));
                             }
                             break;
                         case DBT_DEVICE_REMOVE_COMPLETE:
